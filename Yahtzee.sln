@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee", "Yahtzee\Yahtzee.csproj", "{B3269363-279A-48B6-A223-4D5E9F56D761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SectionCombinationsUnitTests", "SectionCombinationsUnitTests\SectionCombinationsUnitTests.csproj", "{33ACBF3F-9B79-45C7-91E1-E91B070231DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3269363-279A-48B6-A223-4D5E9F56D761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3269363-279A-48B6-A223-4D5E9F56D761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3269363-279A-48B6-A223-4D5E9F56D761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3269363-279A-48B6-A223-4D5E9F56D761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33ACBF3F-9B79-45C7-91E1-E91B070231DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33ACBF3F-9B79-45C7-91E1-E91B070231DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33ACBF3F-9B79-45C7-91E1-E91B070231DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33ACBF3F-9B79-45C7-91E1-E91B070231DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0486E66D-5A8A-41EA-B95C-30D92AFB1E24}
+	EndGlobalSection
+EndGlobal

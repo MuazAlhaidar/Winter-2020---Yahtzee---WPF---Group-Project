@@ -1,0 +1,90 @@
+﻿<Window x:Class="Yahtzee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Yahtzee"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="455" Width="800">
+    <Grid>
+
+        <!--These Dice are the dice to be rolled-->
+        <Grid x:Name="FieldDice"  Margin="10,50,242,260" MaxHeight="150" MaxWidth="550">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnFieldDice1" Grid.Column="0" Click="FieldDice_Click" Content="-1"/>
+            <Button x:Name="BtnFieldDice2" Grid.Column="1" Click="FieldDice_Click" Content="-1"/>
+            <Button x:Name="BtnFieldDice3" Grid.Column="2" Click="FieldDice_Click" Content="-1"/>
+            <Button x:Name="BtnFieldDice4" Grid.Column="3" Click="FieldDice_Click" Content="-1"/>
+            <Button x:Name="BtnFieldDice5" Grid.Column="4" Click="FieldDice_Click" Content="-1"/>
+        </Grid>
+
+        <!--These dice are in the players hand, and will not be rolled-->
+        <Grid x:Name="HeldDice"  Margin="10,302,242,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnHeldDice1" Grid.Column="0" Click="HeldDice_Click" Content="-1"/>
+            <Button x:Name="BtnHeldDice2" Grid.Column="1" Click="HeldDice_Click" Content="-1"/>
+            <Button x:Name="BtnHeldDice3" Grid.Column="2" Click="HeldDice_Click" Content="-1"/>
+            <Button x:Name="BtnHeldDice4" Grid.Column="3" Click="HeldDice_Click" Content="-1"/>
+            <Button x:Name="BtnHeldDice5" Grid.Column="4" Click="HeldDice_Click" Content="-1"/>
+        </Grid>
+
+        <!--This button will roll the Feild Dice only-->
+        <Button x:Name="BtnRoll" Content="Roll Dice?" HorizontalAlignment="Left" Margin="250,252,0,0" VerticalAlignment="Top" Width="75" Click="BtnRoll_Click"  />
+
+        <!--User will choose one of these buttons to take the points of, if they are available to press-->
+        <Button x:Name="BtnOnes" Content="Ones" HorizontalAlignment="Left" Margin="584,1,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnTwos" Content="Twos" HorizontalAlignment="Left" Margin="584,26,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnThrees" Content="Threes" HorizontalAlignment="Left" Margin="584,51,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnFours" Content="Fours" HorizontalAlignment="Left" Margin="584,76,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnFives" Content="Fives" HorizontalAlignment="Left" Margin="584,101,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnSixes" Content="Sixes" HorizontalAlignment="Left" Margin="584,126,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+
+        <Button x:Name="BtnThreeOfAKind" Content="Three of a Kind" HorizontalAlignment="Left" Margin="584,213,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnFourOfAKind" Content="Four of a Kind" HorizontalAlignment="Left" Margin="584,238,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnFullHouse" Content="Full House" HorizontalAlignment="Left" Margin="584,263,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnSmallStraight" Content="Small Straight" HorizontalAlignment="Left" Margin="584,288,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnLargeStraight" Content="Large Straight" HorizontalAlignment="Left" Margin="584,313,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnChance" Content="Chance" HorizontalAlignment="Left" Margin="584,338,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+        <Button x:Name="BtnYahtzee" Content="YAHTZEE" HorizontalAlignment="Left" Margin="584,363,0,0" VerticalAlignment="Top" Width="88" Click="PointButton_Click"/>
+
+        <Label x:Name="LblSum" Content="Sum:" HorizontalAlignment="Left" Margin="584,151,0,0" VerticalAlignment="Top" Width="88" HorizontalContentAlignment="Center" Background="#FFC3DEB6"/>
+        <Label x:Name="LblBonus" Content="Bonus:" HorizontalAlignment="Left" Margin="584,182,0,0" VerticalAlignment="Top" Width="88" HorizontalContentAlignment="Center" BorderThickness="0" ClipToBounds="True" Background="#FFC3DEB6"/>
+        <Label x:Name="LblTotalScore" Content="Total Score:" HorizontalAlignment="Left" Margin="584,389,0,0" VerticalAlignment="Top" Width="88" HorizontalContentAlignment="Center" Background="#FFC3DEB6" BorderThickness="0"/>
+        <Label x:Name="LblRollCounter" Content="" HorizontalAlignment="Left" Margin="340,249,0,0" VerticalAlignment="Top" Width="80" Height="26" Background="#FFC3DEB6"/>
+        <Label Content="ATTENTION: The points are only calculated using the dice held in your hand" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FFE89898"/>
+
+        <!--These textboxes will be filled when the button they are associated with is pressed-->
+        <!--unless they are the sum, bonus, or total score labels (those cannot be pressed)-->
+        <TextBox x:Name="TxtbxOnes" HorizontalAlignment="Left" Height="20" Margin="677,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxTwos" HorizontalAlignment="Left" Height="20" Margin="677,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxThrees" HorizontalAlignment="Left" Height="20" Margin="677,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxFours" HorizontalAlignment="Left" Height="20" Margin="677,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxFives" HorizontalAlignment="Left" Height="20" Margin="677,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxSixes" HorizontalAlignment="Left" Height="20" Margin="677,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+
+        <TextBox x:Name="TxtbxSum" HorizontalAlignment="Left" Height="20" Margin="677,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxBonus" HorizontalAlignment="Left" Height="20" Margin="677,185,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+
+        <TextBox x:Name="TxtbxThreeOfAKind" HorizontalAlignment="Left" Height="20" Margin="677,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxFourOfAKind" HorizontalAlignment="Left" Height="20" Margin="677,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxFullHouse" HorizontalAlignment="Left" Height="20" Margin="677,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxSmallStraight" HorizontalAlignment="Left" Height="20" Margin="677,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxLargeStraight" HorizontalAlignment="Left" Height="20" Margin="677,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxChance" HorizontalAlignment="Left" Height="20" Margin="677,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+        <TextBox x:Name="TxtbxYahtzee" HorizontalAlignment="Left" Height="20" Margin="677,363,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+
+        <TextBox x:Name="TxtbxTotalScore" HorizontalAlignment="Left" Height="20" Margin="677,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" IsReadOnly="True"/>
+    </Grid>
+</Window>
